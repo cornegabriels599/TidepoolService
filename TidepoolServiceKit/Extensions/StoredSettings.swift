@@ -68,7 +68,6 @@ extension StoredSettings: IdentifiableDatum {
                                       manufacturers: datumCGMManufacturers,
                                       model: datumCGMModel,
                                       name: datumCGMName,
-                                      serialNumber: datumCGMSerialNumber,
                                       softwareVersion: datumCGMSoftwareVersion,
                                       transmitterId: nil,       // TODO: https://tidepool.atlassian.net/browse/LOOP-3929
                                       units: datumCGMUnits,
@@ -85,7 +84,6 @@ extension StoredSettings: IdentifiableDatum {
     func datumPumpSettings(for userId: String, hostIdentifier: String, hostVersion: String) -> TPumpSettingsDatum {
         let datum = TPumpSettingsDatum(time: datumTime,
                                        activeScheduleName: datumPumpActiveScheduleName,
-                                       automatedDelivery: datumPumpAutomatedDelivery,
                                        basal: datumPumpBasal,
                                        basalRateSchedules: datumPumpBasalRateSchedules,
                                        bloodGlucoseSafetyLimit: datumPumpBloodGlucoseSafetyLimit,
@@ -105,7 +103,6 @@ extension StoredSettings: IdentifiableDatum {
                                        name: datumPumpName,
                                        overridePresets: datumPumpOverridePresets,
                                        scheduleTimeZoneOffset: datumPumpScheduleTimeZoneOffset,
-                                       serialNumber: datumPumpSerialNumber,
                                        softwareVersion: datumPumpSoftwareVersion,
                                        units: datumPumpUnits)
         let origin = datumOrigin(for: resolvedIdentifier(for: TPumpSettingsDatum.self), hostIdentifier: hostIdentifier, hostVersion: hostVersion)

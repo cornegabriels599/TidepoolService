@@ -683,7 +683,6 @@ extension TCGMSettingsDatum: EffectivelyEquivalent {
             self.manufacturers == other.manufacturers &&
             self.model == other.model &&
             self.name == other.name &&
-            self.serialNumber == other.serialNumber &&
             self.softwareVersion == other.softwareVersion &&
             self.transmitterId == other.transmitterId &&
             self.units == other.units &&
@@ -702,7 +701,6 @@ extension TCGMSettingsDatum: EffectivelyEquivalent {
             manufacturers == nil &&
             model == nil &&
             name == nil &&
-            serialNumber == nil &&
             softwareVersion == nil &&
             transmitterId == nil &&
             defaultAlerts == nil &&
@@ -718,8 +716,7 @@ extension TPumpSettingsDatum: EffectivelyEquivalent {
 
     // All TDatum properties can be ignored for this datum type
     func isEffectivelyEquivalent(to other: TPumpSettingsDatum) -> Bool {
-        return self.activeScheduleName == other.activeScheduleName &&
-            self.automatedDelivery == other.automatedDelivery &&
+        return             self.activeScheduleName == other.activeScheduleName &&
             self.basal == other.basal &&
             self.basalRateSchedule == other.basalRateSchedule &&
             self.basalRateSchedules == other.basalRateSchedules &&
@@ -743,15 +740,13 @@ extension TPumpSettingsDatum: EffectivelyEquivalent {
             self.name == other.name &&
             self.overridePresets == other.overridePresets &&
             self.scheduleTimeZoneOffset == other.scheduleTimeZoneOffset &&
-            self.serialNumber == other.serialNumber &&
             self.softwareVersion == other.softwareVersion &&
             self.units == other.units
     }
 
     // Ignore units as they are always specified
     var isEffectivelyEmpty: Bool {
-        return activeScheduleName == nil &&
-            automatedDelivery == nil &&
+        return             activeScheduleName == nil &&
             basal == nil &&
             basalRateSchedule == nil &&
             basalRateSchedules == nil &&
@@ -775,7 +770,6 @@ extension TPumpSettingsDatum: EffectivelyEquivalent {
             name == nil &&
             overridePresets == nil &&
             scheduleTimeZoneOffset == nil &&
-            serialNumber == nil &&
             softwareVersion == nil
     }
 }
